@@ -1,0 +1,64 @@
+import java.util.*;
+class Student{
+	private String name;
+	private int age;
+	private int marks;
+	public Student(String name, int age, int marks) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.marks = marks;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	@Override
+	public boolean equals(Object o) {
+		Student s1=(Student)o;
+		if(this.name.equals(s1.name) && this.age==(s1.age))
+			return true;
+		else 
+			return false;
+	}
+}
+public class LinkedListUser {
+
+	public static void main(String[] args) {
+		Student u1=new Student("ABC",20,8);
+		Student u2=new Student("DEF",19,9);
+		Student u3=new Student("GHI",21,10);
+		LinkedList<Student> ll=new LinkedList<Student>();
+		ll.add(u1);
+		ll.add(u2);
+		ll.add(u3);
+		//(a)
+		for(Student u:ll)
+			System.out.print(u.getName()+","+u.getAge()+","+u.getMarks()+"	");
+		//(b)
+		System.out.println();
+		Student s=new Student("JKL",22,7);
+		System.out.println(ll.contains(s));
+		//(c)
+		ll.remove(1);
+		//(d)
+		System.out.println(ll.size());
+		//(e)
+		System.out.println(u1.equals(u2));
+	}
+
+}
