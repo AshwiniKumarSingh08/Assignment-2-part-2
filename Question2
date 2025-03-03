@@ -1,0 +1,53 @@
+import java.util.*;
+class User implements Comparable<User>{
+	private String name;
+	private int age;
+	public User(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	@Override
+	public int compareTo(User u) {
+		if(this.age==u.age)
+			return 0;
+		else if(this.age>u.age)
+			return 1;
+		else
+			return -1;
+	}
+}
+public class ArrayListUser {
+
+	public static void main(String[] args) {
+		User u1=new User("ABC",20);
+		User u2=new User("DEF",19);
+		User u3=new User("GHI",21);
+		ArrayList<User> obj=new ArrayList<User>();
+		obj.add(u1);
+		obj.add(u2);
+		obj.add(u3);
+		
+		for(User u:obj)
+			System.out.print(u.getName()+","+u.getAge()+" ");
+		System.out.println();
+		Collections.sort(obj);
+		Iterator itr=obj.iterator();
+		while(itr.hasNext()) {
+			User u=(User)itr.next();
+			System.out.print(u.getName()+","+u.getAge()+" ");
+		}
+	}
+}
